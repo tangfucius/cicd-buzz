@@ -20,7 +20,7 @@ def generate_buzz():
     return phrase.title()
 
 def void():
-    return 1
+    return 0
 
 if __name__ == "__main__":
     print generate_buzz()
