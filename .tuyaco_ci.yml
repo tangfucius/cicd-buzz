@@ -1,0 +1,11 @@
+name: kf_tuyaco_test
+image: tusimple/test:kf_test
+rsa_key: /kf_github_rsa
+resource:
+  cpu: 2
+  gpu: 0
+  mem: 2048
+commands:
+  push:
+    - cd cicd-buzz && pip install -r requirements.txt
+    - python -m pytest -v tests/test_generator.py
