@@ -7,5 +7,6 @@ resource:
   mem: 2048
 commands:
   push:
+    - git clone --recursive git@github.com:$REPO.git
     - cd cicd-buzz && pip install -r requirements.txt
     - python -m pytest -v tests/test_generator.py
