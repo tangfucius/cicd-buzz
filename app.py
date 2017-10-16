@@ -2,15 +2,12 @@ import os
 import signal
 from flask import Flask, request
 from buzz import generator
+import pprint
 
 app = Flask(__name__)
+webhook = Webhook(app, endpoint='/payload')
 
 signal.signal(signal.SIGINT, lambda s, f: os._exit(0))
-
-@app.route("/payload", methods=["POST"])
-def webhook():
-	hook = request.get_json(force=True)
-	print(hook)
 
 @app.route("/")
 def generate_buzz():
